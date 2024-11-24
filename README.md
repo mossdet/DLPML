@@ -21,7 +21,7 @@ Or clone the repo and install the required dependencies using [Poetry](https://p
 poetry install
 ```
 
-## Usage (check [notebooks](/notebooks))
+## Usage (check [Notebooks](/notebooks))
 ### Linear Regression
 ```python
 import pandas as pd
