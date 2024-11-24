@@ -1,35 +1,57 @@
-# DLPML
+# dlpml
 
-## Overview
-DLPML (Deep Learning Project for Machine Learning) is a project focused on developing and implementing deep learning models for various machine learning tasks. This repository contains code, data, and documentation for the project.
+`dlpml` is a minimalist machine learning library implemented in Python. It provides simple and efficient tools for data analysis and machine learning, including linear regression and logistic regression models.
 
 ## Features
-- Implementation of various deep learning models
-- Data preprocessing and augmentation
-- Model training and evaluation
-- Visualization of results
+
+- Linear Regression
+- Logistic Regression
+- Regularization
+- Gradient Descent Optimization
 
 ## Installation
-To get started with DLPML, clone the repository and install the required dependencies:
 
-```bash
-git clone https://github.com/yourusername/DLPML.git
-cd DLPML
-pip install -r requirements.txt
-```
+To install the required dependencies, use [Poetry](https://python-poetry.org/):
+
+```sh
+poetry install
 
 ## Usage
-To train a model, run the following command:
+### Linear Regression
+```python
+import pandas as pd
+from dlpml.regression.linear_regressor import LinearRegressor
 
-```bash
-python train.py --config config.yaml
+# Load dataset
+data = pd.read_csv("data/ex_linear_regression_data1.csv", header=None)
+X_train = data.iloc[:, [0]].to_numpy()
+y_train = data.iloc[:, 1].to_numpy()
+
+# Initialize and fit the model
+model = LinearRegressor(alpha=0.01, iterations=10000, lambda_=0.01)
+model.fit(X_train, y_train)
+
+# Make predictions
+y_pred = model.predict(X_train)
+```
+### Logistic Regression
+```python
+import pandas as pd
+from dlpml.classification.logistic_regressor import LogisticRegressor
+
+# Load dataset
+data = pd.read_csv("data/ex_logistic_regression_data1.csv")
+X_train = data.iloc[:, 0:2].to_numpy()
+y_train = data.iloc[:, 2].to_numpy()
+
+# Initialize and fit the model
+model = LogisticRegressor(alpha=0.01, iterations=10000, lambda_=0.01)
+model.fit(X_train, y_train)
+
+# Make predictions
+y_pred = model.predict(X_train)
 ```
 
-## Contributing
-We welcome contributions to the DLPML project. Please fork the repository and submit pull requests for any enhancements or bug fixes.
-
 ## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Contact
-For any questions or inquiries, please contact [yourname@domain.com](mailto:yourname@domain.com).
+This project is licensed under the MIT License - see the LICENSE file for details. 
