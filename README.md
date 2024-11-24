@@ -17,7 +17,7 @@ To install the required dependencies, use [Poetry](https://python-poetry.org/):
 poetry install
 ```
 
-## Usage
+## Usage (check notebooks)
 ### Linear Regression
 ```python
 import pandas as pd
