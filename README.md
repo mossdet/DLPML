@@ -16,7 +16,7 @@ Either install the package from PyPI:
 pip install dlpml
 ```
 
-Or install the required dependencies using [Poetry](https://python-poetry.org/):
+Or clone the repo and install the required dependencies using [Poetry](https://python-poetry.org/):
 ```sh
 poetry install
 ```
