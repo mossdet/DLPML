@@ -15,6 +15,7 @@ To install the required dependencies, use [Poetry](https://python-poetry.org/):
 
 ```sh
 poetry install
+```
 
 ## Usage
 ### Linear Regression
